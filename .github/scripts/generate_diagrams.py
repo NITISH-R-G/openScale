@@ -2,36 +2,39 @@ import os
 import json
 
 def generate_diagrams():
-    analysis_file = ".github/data/repo_analysis.json"
-    if not os.path.exists(analysis_file):
-        print("Analysis file not found. Run analyze_repo.py first.")
+    kg_file = ".github/data/knowledge_graph.json"
+    if not os.path.exists(kg_file):
+        print("Knowledge graph file not found. Run knowledge_graph.py first.")
         return
 
-    with open(analysis_file, "r") as f:
-        analysis = json.load(f)
+    with open(kg_file, "r") as f:
+        graph = json.load(f)
 
-    # 1. Generate Architecture Overview (Mermaid)
+    # 1. Generate Architecture Overview dynamically from knowledge graph
     mermaid_arch = "```mermaid\ngraph TD;\n"
-    mermaid_arch += "    Repo[Repository] --> Docs[Documentation];\n"
+    mermaid_arch += "    root[Repository];\n"
 
-    if "Android" in analysis["frameworks"]:
-        mermaid_arch += "    Repo --> AndroidApp[Android App];\n"
-        mermaid_arch += "    AndroidApp --> UI[UI Layer];\n"
-        mermaid_arch += "    AndroidApp --> Core[Core Layer];\n"
-        mermaid_arch += "    Core --> DB[Database];\n"
-        mermaid_arch += "    Core --> BT[Bluetooth];\n"
+    # Add nodes
+    for node in graph["nodes"]:
+        mermaid_arch += f"    {node['id']}[{node['label']}];\n"
 
-    if "C/C++ (Arduino)" in analysis["languages"]:
-        mermaid_arch += "    Repo --> Arduino[Arduino MCU];\n"
-        mermaid_arch += "    Arduino --> Scales[OpenScale MCU];\n"
-        mermaid_arch += "    Arduino --> Libs[Libraries];\n"
+    # Add edges
+    for edge in graph["edges"]:
+        mermaid_arch += f"    {edge['source']} -->|{edge['relation']}| {edge['target']};\n"
+
+    mermaid_arch += "\n    %% Clickable Links\n"
+    for node in graph["nodes"]:
+        if "path" in node:
+            mermaid_arch += f"    click {node['id']} href \"./{node['path']}\"\n"
 
     mermaid_arch += "```"
 
     # 2. Generate CI/CD Workflow Diagram
     mermaid_ci = "```mermaid\ngraph LR;\n"
     mermaid_ci += "    Push[Code Push] --> Tests[Run Tests];\n"
-    mermaid_ci += "    Push --> Analysis[Analyze Repo];\n"
+    mermaid_ci += "    Tests --> Lint[Run Linting];\n"
+    mermaid_ci += "    Lint --> Deps[Dependency Audit];\n"
+    mermaid_ci += "    Deps --> Analysis[Analyze Repo];\n"
     mermaid_ci += "    Analysis --> Graph[Update Knowledge Graph];\n"
     mermaid_ci += "    Graph --> Diagrams[Generate Diagrams];\n"
     mermaid_ci += "    Diagrams --> AI[AI Documentation Agent];\n"
@@ -42,12 +45,12 @@ def generate_diagrams():
     # Save diagrams to files
     os.makedirs("docs/architecture", exist_ok=True)
     with open("docs/architecture/architecture.mmd", "w") as f:
-        f.write(mermaid_arch.strip("`mermaid\n").strip("`"))
+        f.write(mermaid_arch.replace("```mermaid\n", "", 1).replace("```", ""))
 
     with open("docs/architecture/cicd.mmd", "w") as f:
-        f.write(mermaid_ci.strip("`mermaid\n").strip("`"))
+        f.write(mermaid_ci.replace("```mermaid\n", "", 1).replace("```", ""))
 
-    print("Diagrams generated successfully.")
+    print("Dynamic diagrams generated successfully.")
 
 if __name__ == "__main__":
     generate_diagrams()

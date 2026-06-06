@@ -31,11 +31,35 @@ def generate_ai_documentation():
         "onboarding_guide": "To get started, check the Android and Arduino directories. Build the Android app using Gradle and flash the Arduino using standard C++ toolchains."
     }
 
-    # Attempt to use OpenAI if key is present (Mock implementation for actual execution)
+    # Attempt to use OpenAI if key is present
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
-        print("OPENAI_API_KEY detected, would call LLM here.")
-        # Actual LLM call would go here
+        print("OPENAI_API_KEY detected, calling LLM API...")
+        try:
+            req = urllib.request.Request(
+                "https://api.openai.com/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                data=json.dumps({
+                    "model": "gpt-3.5-turbo",
+                    "messages": [{
+                        "role": "user",
+                        "content": f"Based on this repo analysis: {json.dumps(analysis)}, write a short repository summary and an architectural insight paragraph."
+                    }]
+                }).encode("utf-8")
+            )
+            with urllib.request.urlopen(req) as response:
+                result = json.loads(response.read().decode("utf-8"))
+                llm_text = result["choices"][0]["message"]["content"]
+
+                # Update heuristic fallback with real response
+                ai_doc["repository_summary"] = "AI Summary: " + llm_text[:200] + "..." # Simplified parsing for example
+                ai_doc["architectural_insights"] = "For full details, see the generated insights."
+                print("Successfully retrieved AI summary.")
+        except Exception as e:
+            print(f"Error calling OpenAI API: {e}. Falling back to heuristics.")
     else:
         print("No OPENAI_API_KEY found, using heuristic generation.")
 

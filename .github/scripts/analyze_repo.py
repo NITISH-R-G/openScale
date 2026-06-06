@@ -12,8 +12,9 @@ def analyze_repo(root_dir="."):
     }
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
-        # Ignore hidden dirs like .git and .github
-        if any(part.startswith('.') for part in Path(dirpath).parts):
+        # Ignore hidden dirs and build output dirs
+        ignored_dirs = ['.git', '.github', '.gradle', 'build', 'tmp', 'node_modules', 'dist', 'target', 'schemas']
+        if any(part in ignored_dirs or part.startswith('.') for part in Path(dirpath).parts):
             continue
 
         rel_path = os.path.relpath(dirpath, root_dir)
