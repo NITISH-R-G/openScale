@@ -1,0 +1,226 @@
+{
+  "nodes": [
+    {
+      "id": "android_app",
+      "label": "Android App",
+      "type": "module",
+      "path": "android_app"
+    },
+    {
+      "id": "docs",
+      "label": "Docs",
+      "type": "docs",
+      "path": "docs"
+    },
+    {
+      "id": "fastlane",
+      "label": "Fastlane",
+      "type": "deployment",
+      "path": "fastlane"
+    },
+    {
+      "id": "arduino_mcu",
+      "label": "Arduino Mcu",
+      "type": "module",
+      "path": "arduino_mcu"
+    },
+    {
+      "id": "android_app_usecase",
+      "label": "Usecase Component",
+      "type": "component",
+      "path": "android_app/app/src/androidTest/java/com/health/openscale/core/usecase"
+    },
+    {
+      "id": "android_app_utils",
+      "label": "Utils Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/utils"
+    },
+    {
+      "id": "android_app_facade",
+      "label": "Facade Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/facade"
+    },
+    {
+      "id": "android_app_usecase",
+      "label": "Usecase Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/usecase"
+    },
+    {
+      "id": "android_app_service",
+      "label": "Service Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/service"
+    },
+    {
+      "id": "android_app_model",
+      "label": "Model Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/model"
+    },
+    {
+      "id": "android_app_worker",
+      "label": "Worker Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/worker"
+    },
+    {
+      "id": "android_app_database",
+      "label": "Database Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/database"
+    },
+    {
+      "id": "android_app_bluetooth",
+      "label": "Bluetooth Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/bluetooth"
+    },
+    {
+      "id": "android_app_data",
+      "label": "Data Component",
+      "type": "component",
+      "path": "android_app/app/src/main/java/com/health/openscale/core/data"
+    },
+    {
+      "id": "android_app_bluetooth",
+      "label": "Bluetooth Component",
+      "type": "component",
+      "path": "android_app/app/src/test/java/com/health/openscale/core/bluetooth"
+    },
+    {
+      "id": "arduino_mcu_Time",
+      "label": "Time Component",
+      "type": "component",
+      "path": "arduino_mcu/libraries/Time"
+    },
+    {
+      "id": "arduino_mcu_DS3232RTC",
+      "label": "Ds3232Rtc Component",
+      "type": "component",
+      "path": "arduino_mcu/libraries/DS3232RTC"
+    },
+    {
+      "id": "arduino_mcu_I2C_eeprom",
+      "label": "I2C_Eeprom Component",
+      "type": "component",
+      "path": "arduino_mcu/libraries/I2C_eeprom"
+    },
+    {
+      "id": "arduino_mcu_RunningMedian",
+      "label": "Runningmedian Component",
+      "type": "component",
+      "path": "arduino_mcu/libraries/RunningMedian"
+    },
+    {
+      "id": "arduino_mcu_LowPower",
+      "label": "Lowpower Component",
+      "type": "component",
+      "path": "arduino_mcu/libraries/LowPower"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "android_app",
+      "relation": "contains"
+    },
+    {
+      "source": "root",
+      "target": "docs",
+      "relation": "documents"
+    },
+    {
+      "source": "root",
+      "target": "fastlane",
+      "relation": "contains"
+    },
+    {
+      "source": "root",
+      "target": "arduino_mcu",
+      "relation": "contains"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_usecase",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_utils",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_facade",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_usecase",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_service",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_model",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_worker",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_database",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_bluetooth",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_data",
+      "relation": "implements"
+    },
+    {
+      "source": "android_app",
+      "target": "android_app_bluetooth",
+      "relation": "implements"
+    },
+    {
+      "source": "arduino_mcu",
+      "target": "arduino_mcu_Time",
+      "relation": "implements"
+    },
+    {
+      "source": "arduino_mcu",
+      "target": "arduino_mcu_DS3232RTC",
+      "relation": "implements"
+    },
+    {
+      "source": "arduino_mcu",
+      "target": "arduino_mcu_I2C_eeprom",
+      "relation": "implements"
+    },
+    {
+      "source": "arduino_mcu",
+      "target": "arduino_mcu_RunningMedian",
+      "relation": "implements"
+    },
+    {
+      "source": "arduino_mcu",
+      "target": "arduino_mcu_LowPower",
+      "relation": "implements"
+    }
+  ]
+}

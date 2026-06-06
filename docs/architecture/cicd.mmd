@@ -1,0 +1,10 @@
+graph LR;
+    Push[Code Push] --> Tests[Run Tests];
+    Tests --> Lint[Run Linting];
+    Lint --> Deps[Dependency Audit];
+    Deps --> Analysis[Analyze Repo];
+    Analysis --> Graph[Update Knowledge Graph];
+    Graph --> Diagrams[Generate Diagrams];
+    Diagrams --> AI[AI Documentation Agent];
+    AI --> Readme[Update README];
+    Readme --> Commit[Commit Changes];
