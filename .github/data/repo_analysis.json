@@ -133,17 +133,17 @@
   ],
   "languages": [
     "Markdown",
-    "C/C++ (Arduino)",
     "XML",
-    "Kotlin"
+    "Kotlin",
+    "C/C++ (Arduino)"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
+    "Fastlane",
     "Gradle",
-    "Bundler",
-    "Fastlane"
+    "Bundler"
   ],
   "key_files": [
     "./LICENSE",
