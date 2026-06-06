@@ -1,0 +1,10 @@
+graph TD;
+    Repo[Repository] --> Docs[Documentation];
+    Repo --> AndroidApp[Android App];
+    AndroidApp --> UI[UI Layer];
+    AndroidApp --> Core[Core Layer];
+    Core --> DB[Database];
+    Core --> BT[Bluetooth];
+    Repo --> Arduino[Arduino MCU];
+    Arduino --> Scales[OpenScale MCU];
+    Arduino --> Libs[Libraries];

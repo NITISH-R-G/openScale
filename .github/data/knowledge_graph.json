@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "android_app",
+      "label": "Android App",
+      "type": "module"
+    },
+    {
+      "id": "arduino_mcu",
+      "label": "Arduino MCU",
+      "type": "module"
+    },
+    {
+      "id": "docs",
+      "label": "Documentation",
+      "type": "docs"
+    },
+    {
+      "id": "bluetooth_core",
+      "label": "Bluetooth Core",
+      "type": "component"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "android_app",
+      "relation": "contains"
+    },
+    {
+      "source": "root",
+      "target": "arduino_mcu",
+      "relation": "contains"
+    },
+    {
+      "source": "root",
+      "target": "docs",
+      "relation": "documents"
+    },
+    {
+      "source": "android_app",
+      "target": "bluetooth_core",
+      "relation": "implements"
+    }
+  ]
+}

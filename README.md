@@ -153,3 +153,36 @@ openScale is licensed under the GPL v3, see LICENSE file for full notice.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+
+<!-- AUTODOC_START -->
+
+## 🤖 Auto-Generated Repository Status
+
+> This section is automatically maintained by the repository AI agent.
+
+### 📊 Technology Stack
+- **Languages:** Markdown, XML, Kotlin, C/C++ (Arduino)
+- **Frameworks:** Android
+- **Build Tools:** Bundler, Fastlane, Gradle
+
+### 🧠 AI Repository Summary
+This repository contains a multi-component project primarily using Markdown, XML, Kotlin, C/C++ (Arduino). It features an Android application component. It includes Arduino firmware and microcontroller code.
+
+**Architectural Insights:** The system is decoupled into client applications and hardware integrations.
+
+### 🗺️ System Architecture
+```mermaid
+graph TD;
+    Repo[Repository] --> Docs[Documentation];
+    Repo --> AndroidApp[Android App];
+    AndroidApp --> UI[UI Layer];
+    AndroidApp --> Core[Core Layer];
+    Core --> DB[Database];
+    Core --> BT[Bluetooth];
+    Repo --> Arduino[Arduino MCU];
+    Arduino --> Scales[OpenScale MCU];
+    Arduino --> Libs[Libraries];
+```
+
+<!-- AUTODOC_END -->
