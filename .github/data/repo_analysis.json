@@ -132,18 +132,18 @@
     "android_app/app/src/androidTest/java/com/health/openscale/core/usecase"
   ],
   "languages": [
-    "C/C++ (Arduino)",
-    "Kotlin",
     "Markdown",
-    "XML"
+    "Kotlin",
+    "XML",
+    "C/C++ (Arduino)"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
     "Gradle",
-    "Bundler",
-    "Fastlane"
+    "Fastlane",
+    "Bundler"
   ],
   "key_files": [
     "./README.md",
