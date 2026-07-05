@@ -133,17 +133,17 @@
   ],
   "languages": [
     "XML",
-    "Kotlin",
+    "Markdown",
     "C/C++ (Arduino)",
-    "Markdown"
+    "Kotlin"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
+    "Fastlane",
     "Bundler",
-    "Gradle",
-    "Fastlane"
+    "Gradle"
   ],
   "key_files": [
     "./README.md",
