@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T04:10:59.684423",
+  "generated_at": "2026-07-12T03:40:01.508835",
   "repository_summary": "This repository contains a multi-component project primarily using XML, Markdown, C/C++ (Arduino), Kotlin. It features an Android application component. It includes Arduino firmware and microcontroller code. ",
   "architectural_insights": "The system is decoupled into client applications and hardware integrations.",
   "onboarding_guide": "To get started, check the Android and Arduino directories. Build the Android app using Gradle and flash the Arduino using standard C++ toolchains."

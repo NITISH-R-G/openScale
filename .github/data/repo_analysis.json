@@ -141,9 +141,9 @@
     "Android"
   ],
   "build_tools": [
-    "Fastlane",
+    "Gradle",
     "Bundler",
-    "Gradle"
+    "Fastlane"
   ],
   "key_files": [
     "./README.md",
