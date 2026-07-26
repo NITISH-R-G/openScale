@@ -162,12 +162,12 @@ openScale is licensed under the GPL v3, see LICENSE file for full notice.
 > This section is automatically maintained by the repository AI agent.
 
 ### 📊 Technology Stack
-- **Languages:** XML, Markdown, C/C++ (Arduino), Kotlin
+- **Languages:** Kotlin, Markdown, XML, C/C++ (Arduino)
 - **Frameworks:** Android
 - **Build Tools:** Bundler, Fastlane, Gradle
 
 ### 🧠 AI Repository Summary
-This repository contains a multi-component project primarily using XML, Markdown, C/C++ (Arduino), Kotlin. It features an Android application component. It includes Arduino firmware and microcontroller code. 
+This repository contains a multi-component project primarily using Kotlin, Markdown, XML, C/C++ (Arduino). It features an Android application component. It includes Arduino firmware and microcontroller code. 
 
 **Architectural Insights:** The system is decoupled into client applications and hardware integrations.
 
@@ -179,64 +179,64 @@ graph TD;
     android_app[Android App];
     arduino_mcu[Arduino Mcu];
     docs[Docs];
+    android_app_bluetooth[Bluetooth Component];
+    android_app_utils[Utils Component];
+    android_app_bluetooth[Bluetooth Component];
+    android_app_model[Model Component];
     android_app_service[Service Component];
     android_app_database[Database Component];
-    android_app_utils[Utils Component];
-    android_app_worker[Worker Component];
-    android_app_bluetooth[Bluetooth Component];
     android_app_facade[Facade Component];
+    android_app_worker[Worker Component];
     android_app_usecase[Usecase Component];
     android_app_data[Data Component];
-    android_app_model[Model Component];
-    android_app_bluetooth[Bluetooth Component];
     android_app_usecase[Usecase Component];
-    arduino_mcu_DS3232RTC[Ds3232Rtc Component];
+    arduino_mcu_Time[Time Component];
     arduino_mcu_I2C_eeprom[I2C_Eeprom Component];
     arduino_mcu_LowPower[Lowpower Component];
+    arduino_mcu_DS3232RTC[Ds3232Rtc Component];
     arduino_mcu_RunningMedian[Runningmedian Component];
-    arduino_mcu_Time[Time Component];
     root -->|contains| fastlane;
     root -->|contains| android_app;
     root -->|contains| arduino_mcu;
     root -->|documents| docs;
+    android_app -->|implements| android_app_bluetooth;
+    android_app -->|implements| android_app_utils;
+    android_app -->|implements| android_app_bluetooth;
+    android_app -->|implements| android_app_model;
     android_app -->|implements| android_app_service;
     android_app -->|implements| android_app_database;
-    android_app -->|implements| android_app_utils;
-    android_app -->|implements| android_app_worker;
-    android_app -->|implements| android_app_bluetooth;
     android_app -->|implements| android_app_facade;
+    android_app -->|implements| android_app_worker;
     android_app -->|implements| android_app_usecase;
     android_app -->|implements| android_app_data;
-    android_app -->|implements| android_app_model;
-    android_app -->|implements| android_app_bluetooth;
     android_app -->|implements| android_app_usecase;
-    arduino_mcu -->|implements| arduino_mcu_DS3232RTC;
+    arduino_mcu -->|implements| arduino_mcu_Time;
     arduino_mcu -->|implements| arduino_mcu_I2C_eeprom;
     arduino_mcu -->|implements| arduino_mcu_LowPower;
+    arduino_mcu -->|implements| arduino_mcu_DS3232RTC;
     arduino_mcu -->|implements| arduino_mcu_RunningMedian;
-    arduino_mcu -->|implements| arduino_mcu_Time;
 
     %% Clickable Links
     click fastlane href "./fastlane"
     click android_app href "./android_app"
     click arduino_mcu href "./arduino_mcu"
     click docs href "./docs"
+    click android_app_bluetooth href "./android_app/app/src/test/java/com/health/openscale/core/bluetooth"
+    click android_app_utils href "./android_app/app/src/main/java/com/health/openscale/core/utils"
+    click android_app_bluetooth href "./android_app/app/src/main/java/com/health/openscale/core/bluetooth"
+    click android_app_model href "./android_app/app/src/main/java/com/health/openscale/core/model"
     click android_app_service href "./android_app/app/src/main/java/com/health/openscale/core/service"
     click android_app_database href "./android_app/app/src/main/java/com/health/openscale/core/database"
-    click android_app_utils href "./android_app/app/src/main/java/com/health/openscale/core/utils"
-    click android_app_worker href "./android_app/app/src/main/java/com/health/openscale/core/worker"
-    click android_app_bluetooth href "./android_app/app/src/main/java/com/health/openscale/core/bluetooth"
     click android_app_facade href "./android_app/app/src/main/java/com/health/openscale/core/facade"
+    click android_app_worker href "./android_app/app/src/main/java/com/health/openscale/core/worker"
     click android_app_usecase href "./android_app/app/src/main/java/com/health/openscale/core/usecase"
     click android_app_data href "./android_app/app/src/main/java/com/health/openscale/core/data"
-    click android_app_model href "./android_app/app/src/main/java/com/health/openscale/core/model"
-    click android_app_bluetooth href "./android_app/app/src/test/java/com/health/openscale/core/bluetooth"
     click android_app_usecase href "./android_app/app/src/androidTest/java/com/health/openscale/core/usecase"
-    click arduino_mcu_DS3232RTC href "./arduino_mcu/libraries/DS3232RTC"
+    click arduino_mcu_Time href "./arduino_mcu/libraries/Time"
     click arduino_mcu_I2C_eeprom href "./arduino_mcu/libraries/I2C_eeprom"
     click arduino_mcu_LowPower href "./arduino_mcu/libraries/LowPower"
+    click arduino_mcu_DS3232RTC href "./arduino_mcu/libraries/DS3232RTC"
     click arduino_mcu_RunningMedian href "./arduino_mcu/libraries/RunningMedian"
-    click arduino_mcu_Time href "./arduino_mcu/libraries/Time"
 
 ```
 
