@@ -132,18 +132,18 @@
     "docs/misc"
   ],
   "languages": [
-    "Kotlin",
     "XML",
-    "C/C++ (Arduino)",
-    "Markdown"
+    "Kotlin",
+    "Markdown",
+    "C/C++ (Arduino)"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
+    "Fastlane",
     "Gradle",
-    "Bundler",
-    "Fastlane"
+    "Bundler"
   ],
   "key_files": [
     "./LICENSE",
