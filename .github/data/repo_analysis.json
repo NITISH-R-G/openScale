@@ -132,18 +132,18 @@
     "docs/architecture"
   ],
   "languages": [
-    "Kotlin",
     "C/C++ (Arduino)",
     "Markdown",
+    "Kotlin",
     "XML"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
-    "Gradle",
+    "Bundler",
     "Fastlane",
-    "Bundler"
+    "Gradle"
   ],
   "key_files": [
     "./README.md",
