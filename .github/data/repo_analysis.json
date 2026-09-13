@@ -132,8 +132,8 @@
     "arduino_mcu/openScale_MCU"
   ],
   "languages": [
-    "XML",
     "Markdown",
+    "XML",
     "Kotlin",
     "C/C++ (Arduino)"
   ],
@@ -141,8 +141,8 @@
     "Android"
   ],
   "build_tools": [
-    "Gradle",
     "Fastlane",
+    "Gradle",
     "Bundler"
   ],
   "key_files": [
