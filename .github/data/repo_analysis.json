@@ -132,8 +132,8 @@
     "arduino_mcu/openScale_MCU"
   ],
   "languages": [
-    "Markdown",
     "XML",
+    "Markdown",
     "Kotlin",
     "C/C++ (Arduino)"
   ],

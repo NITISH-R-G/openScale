@@ -162,12 +162,12 @@ openScale is licensed under the GPL v3, see LICENSE file for full notice.
 > This section is automatically maintained by the repository AI agent.
 
 ### 📊 Technology Stack
-- **Languages:** Markdown, XML, Kotlin, C/C++ (Arduino)
+- **Languages:** XML, Markdown, Kotlin, C/C++ (Arduino)
 - **Frameworks:** Android
 - **Build Tools:** Fastlane, Gradle, Bundler
 
 ### 🧠 AI Repository Summary
-This repository contains a multi-component project primarily using Markdown, XML, Kotlin, C/C++ (Arduino). It features an Android application component. It includes Arduino firmware and microcontroller code. 
+This repository contains a multi-component project primarily using XML, Markdown, Kotlin, C/C++ (Arduino). It features an Android application component. It includes Arduino firmware and microcontroller code. 
 
 **Architectural Insights:** The system is decoupled into client applications and hardware integrations.
 
