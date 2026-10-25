@@ -132,18 +132,18 @@
     "arduino_mcu/libraries/DS3232RTC/examples/tiny3232_KnockBang"
   ],
   "languages": [
-    "Kotlin",
-    "XML",
     "C/C++ (Arduino)",
-    "Markdown"
+    "Markdown",
+    "Kotlin",
+    "XML"
   ],
   "frameworks": [
     "Android"
   ],
   "build_tools": [
-    "Fastlane",
+    "Gradle",
     "Bundler",
-    "Gradle"
+    "Fastlane"
   ],
   "key_files": [
     "./LICENSE",
